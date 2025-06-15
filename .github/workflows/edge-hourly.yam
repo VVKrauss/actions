@@ -1,0 +1,14 @@
+name: Run Edge Function Hourly
+
+on:
+  schedule:
+    - cron: '0 * * * *' # Каждый час
+  workflow_dispatch:
+
+jobs:
+  run-edge-function:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call edge function
+        run: |
+          curl -X POST https://jfvinriqydjtwsmayxix.supabase.co/functions/v1/check-events-and-send-notifications
