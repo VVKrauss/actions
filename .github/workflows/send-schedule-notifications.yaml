@@ -2,7 +2,7 @@ name: Send Schedule Notifications
 
 on:
   schedule:
-    - cron: '0 12 * * 0' # Каждое воскресенье в 12:00
+    - cron: '0 14 * * 0' # Каждое воскресенье в 14:00 UTC
   workflow_dispatch:
 
 jobs:
