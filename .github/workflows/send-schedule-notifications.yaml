@@ -12,5 +12,5 @@ jobs:
       - name: Send request to Supabase edge function
         run: |
           curl -X POST \
-            -H "apikey: ${{ secrets.SUPABASE_API_KEY }}" \
+            -H "apikey: ${{ secrets.VITE_SUPABASE_ANON_KEY }}" \
             https://jfvinriqydjtwsmayxix.supabase.co/functions/v1/telegram_schedule_coffee_sender
