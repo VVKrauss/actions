@@ -1,0 +1,19 @@
+name: Bright Endpoint Trigger
+
+on:
+  schedule:
+    # Каждое воскресенье в 22:00 (UTC)
+    - cron: '0 22 * * 0'
+  workflow_dispatch: # Позволяет запускать вручную из GitHub UI
+
+jobs:
+  call-bright-endpoint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Call bright-endpoint via curl
+        run: |
+          curl -L -X POST 'https://jfvinriqydjtwsmayxix.supabase.co/functions/v1/bright-endpoint' \
+            -H 'Authorization: Bearer ${{ secrets.BRIGHT_ENDPOINT_TOKEN }}' \
+            -H 'Content-Type: application/json' \
+            --data '{"name":"Functions"}'
