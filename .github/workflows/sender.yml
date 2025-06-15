@@ -16,4 +16,5 @@ jobs:
          curl -L -X POST 'https://jfvinriqydjtwsmayxix.supabase.co/functions/v1/bright-endpoint' \
   -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpmdmlucmlxeWRqdHdzbWF5eGl4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDgwMjE4NTgsImV4cCI6MjA2MzU5Nzg1OH0.KNXG-gdypUXVH3zRQkZDn5Az2ct4IvIb73izuER48X8' \
   -H 'Content-Type: application/json' \
-  --data '{"name":"Functions"}'
+  --data '{"name":"Functions"}' 
+  
