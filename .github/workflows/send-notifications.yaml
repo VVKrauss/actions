@@ -13,4 +13,4 @@ jobs:
         run: |
           curl -X POST \
             -H "apikey: ${{ secrets.VITE_SUPABASE_ANON_KEY }}" \
-            https://jfvinriqydjtwsmayxix.supabase.co/functions/v1/sender
+            https://jfvinriqydjtwsmayxix.supabase.co/functions/v1/bright-endpoint
