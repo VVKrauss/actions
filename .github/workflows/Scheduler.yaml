@@ -1,0 +1,18 @@
+name: Bright Endpoint Scheduler
+
+on:
+  schedule:
+    - cron: '0 17 * * 6' # Каждая суббота в 17:00 UTC
+
+jobs:
+  call-bright-endpoint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call bright-endpoint via curl with secret
+        env:
+          BRIGHT_TOKEN: ${{ secrets.BRIGHT_ENDPOINT_TOKEN }}
+        run: |
+          curl -L -X POST 'https://jfvinriqydjtwsmayxix.supabase.co/functions/v1/bright-endpoint' \
+            -H "Authorization: Bearer $BRIGHT_TOKEN" \
+            -H 'Content-Type: application/json' \
+            --data '{"name":"Functions"}'
