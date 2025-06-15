@@ -3,6 +3,7 @@ name: Bright Endpoint Scheduler
 on:
   schedule:
     - cron: '0 17 * * 6' # Каждая суббота в 17:00 UTC
+  workflow_dispatch:
 
 jobs:
   call-bright-endpoint:
