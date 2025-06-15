@@ -2,7 +2,7 @@ name: Send Schedule Notifications
 
 on:
   schedule:
-    - cron: '0 14 * * 0' # Каждое воскресенье в 14:00 UTC
+    - cron: '0 18 * * 0' # Каждое воскресенье в 18:00 UTC
   workflow_dispatch:
 
 jobs:
@@ -11,4 +11,6 @@ jobs:
     steps:
       - name: Send request to Supabase edge function
         run: |
-          curl -X POST https://jfvinriqydjtwsmayxix.supabase.co/functions/v1/telegram_schedule_coffee_sender
+          curl -X POST \
+            -H "apikey: ${{ secrets.SUPABASE_API_KEY }}" \
+            https://jfvinriqydjtwsmayxix.supabase.co/functions/v1/telegram_schedule_coffee_sender
