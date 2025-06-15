@@ -1,0 +1,13 @@
+name: Send Schedule Notifications
+
+on:
+  schedule:
+    - cron: '0 12 * * 0' # Каждое воскресенье в 12:00
+
+jobs:
+  send-notifications:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send request to Supabase edge function
+        run: |
+          curl -X POST https://jfvinriqydjtwsmayxix.supabase.co/functions/v1/telegram_schedule_coffee_sender
